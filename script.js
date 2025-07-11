@@ -1,4 +1,4 @@
-/*
+
 // Exercise 1 -->
 let name = "Altin"
 const person = "Shala"
@@ -112,9 +112,10 @@ switch (punteggio.toUpperCase()) {
     default :
         console.log("Try again!");
 }
-*/
-// Exercise 13
+
+// Exercise 13 / 14
 const numeri = [1, 2, 3, 4, 5, 6, 8, 9];
+//console.log(numeri)
 let somma = 0;
 
 for(let i = 0; i < numeri.length; i++  ) {
@@ -123,5 +124,10 @@ for(let i = 0; i < numeri.length; i++  ) {
 
 console.log(somma);
 
+//Exercise 15
 
-//Exercise 14
+const reversNumber0 = [1, 2, 3, 4, 5, 6, 8, 9];
+
+for (let i = reversNumber0.length - 1; i >= 0; i--) {
+    console.log(reversNumber0[i]);
+}
