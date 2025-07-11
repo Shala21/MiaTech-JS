@@ -47,7 +47,7 @@ while (i >= 1) {
     i--;
 }
 
-/*
+
 //Exercise 7 -->   
 let word = prompt("insert here your any word or text:");
 
@@ -68,8 +68,8 @@ do {
 if (parola !== null) {
   console.log("Your word is:", parola);
 }
-*/
-/*
+
+
 //Exercise 10 -->
 let score = parseInt(prompt("Total score is:"));
 
@@ -82,7 +82,7 @@ if(score > 90 && score < 100) {
 } else (score <= 59); {
     console.log("Insufficient score!")
 } 
-*/
+
 
 //exericise 11 -->
 let punteggio =prompt("Insert here your score (A, B, C, D, E): ")
