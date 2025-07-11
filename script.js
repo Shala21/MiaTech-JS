@@ -1,4 +1,4 @@
-
+/*
 // Exercise 1 -->
 let name = "Altin"
 const person = "Shala"
@@ -70,7 +70,17 @@ if (parola !== null) {
 }
 
 
-//Exercise 10 -->
+//Exercise 10
+let numbeR = 5;
+
+if(numbeR < 5) {
+    console.log("Number is smaller then 5");
+} else {
+    console.log("Number is bigger then 5");
+}
+
+
+//Exercise 11 -->
 let score = parseInt(prompt("Total score is:"));
 
 if (score > 90 && score < 100) {
@@ -83,7 +93,7 @@ if (score > 90 && score < 100) {
     console.log("Insufficient score!")
 } 
 
-//exericise 11 -->
+//exericise 12 -->
 let punteggio =prompt("Total score is:")
 
 switch (punteggio.toUpperCase()) {
@@ -102,5 +112,16 @@ switch (punteggio.toUpperCase()) {
     default :
         console.log("Try again!");
 }
+*/
+// Exercise 13
+const numeri = [1, 2, 3, 4, 5, 6, 8, 9];
+let somma = 0;
 
-// Exercise 12
+for(let i = 0; i < numeri.length; i++  ) {
+    somma += numeri[i];
+}
+
+console.log(somma);
+
+
+//Exercise 14
