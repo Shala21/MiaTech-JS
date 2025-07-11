@@ -23,9 +23,9 @@ let number = 21;
 console.log("This number is shown outside brackets:", number);
 
 //Exercise 4 -->
-var outside = 7;
+let outside = 7;
 {
-    var inside = 3;
+    let inside = 3;
     console.log(inside);
 }
 
@@ -49,7 +49,7 @@ while (i >= 1) {
 
 
 //Exercise 7 -->   
-let word = prompt("insert here your any word or text:");
+let word = prompt("insert here any word or text:");
 
 //Exercise 8 -->
 console.log(word.length);
@@ -73,7 +73,7 @@ if (parola !== null) {
 //Exercise 10 -->
 let score = parseInt(prompt("Total score is:"));
 
-if(score > 90 && score < 100) {
+if (score > 90 && score < 100) {
     console.log("Very good!");
 } else if (score >= 70 && score <= 89) {
     console.log("Good!");
@@ -83,24 +83,24 @@ if(score > 90 && score < 100) {
     console.log("Insufficient score!")
 } 
 
-
 //exericise 11 -->
-let punteggio =prompt("Insert here your score (A, B, C, D, E): ")
+let punteggio =prompt("Total score is:")
 
 switch (punteggio.toUpperCase()) {
-    case "A":
+    case score > 90 && score < 100 :
         console.log("Excellent score!");
         break;
-    case "B":
+    case score >= 70 && score <= 89 :
         console.log("Good score");
         break;
-    case "C":
+    case score >= 60 && score <= 69 :
         console.log("Sufficient score");
         break;
-    case "D":
-    case "E":
+    case score <= 59:
         console.log("Insufficient score");
         break;
     default :
         console.log("Try again!");
 }
+
+// Exercise 12
