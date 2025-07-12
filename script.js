@@ -1,4 +1,4 @@
-
+/*
 // Exercise 1 -->
 let name = "Altin"
 const person = "Shala"
@@ -93,6 +93,7 @@ if (score > 90 && score < 100) {
     console.log("Insufficient score!")
 } 
 
+
 //exericise 12 -->
 let punteggio =prompt("Total score is:")
 
@@ -113,7 +114,8 @@ switch (punteggio.toUpperCase()) {
         console.log("Try again!");
 }
 
-// Exercise 13 / 14
+
+// Exercise 13 / 14 -->
 const numeri = [1, 2, 3, 4, 5, 6, 8, 9];
 //console.log(numeri)
 let somma = 0;
@@ -124,10 +126,36 @@ for(let i = 0; i < numeri.length; i++  ) {
 
 console.log(somma);
 
-//Exercise 15
-
+//Exercise 15 -->
 const reversNumber0 = [1, 2, 3, 4, 5, 6, 8, 9];
 
 for (let i = reversNumber0.length - 1; i >= 0; i--) {
     console.log(reversNumber0[i]);
 }
+
+
+//Exercise 16 -->
+const parole = [];
+
+for (let i = 0; i < 5; i++) {
+    const parola = prompt(`Inserisci la parola numero ${i + 1}:`);
+    parole.push(parola);
+}
+for (let i = 0; i < parole.length; i++) {
+    if (parole[i].length % 2 !== 0) {
+        console.log(parole[i]);
+    }
+}
+*/
+
+//Exercise 17 -->
+let persona = {
+    name:"Gianni",
+    age: 43,
+    city: "Bologna"
+}
+console.log(persona.age);
+persona.age = 60;
+console.log(persona.age);
+persona.job = "Developer";
+console.log(persona.job);
