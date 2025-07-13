@@ -169,7 +169,7 @@ for (let property in persona) {
 }
 
 
-//Exercise 22 & 23 -->
+//Exercise 22 -->
 function outerFunction(x, y) {
     function innerFunction() {
         return x + y;
@@ -193,3 +193,87 @@ function outerFunction(x, initialValue) {
 const myFunction = outerFunction(1, 2);
 console.log(myFunction(3));
 console.log(myFunction(3));
+
+
+//exercise 24 -->
+function createCounter() {
+    let count = 0;
+
+    return {
+        increment: function() {
+            count++;
+            return count;
+        },
+        decrement: function() {
+            count--;
+            return count;
+        },
+        getCount: function() {
+            return count;
+        }
+    };
+}
+
+const myCounter = createCounter();
+console.log(myCounter.increment());
+console.log(myCounter.increment());
+console.log(myCounter.increment());
+console.log(myCounter.decrement());
+console.log(myCounter.decrement());
+
+
+//Exercise from 25 to  27-->
+let student = {
+    name:"Mario",
+    age: 21 ,
+    grade: 100 ,
+    school: "School"
+}
+
+console.log(student);   
+console.log(Object.keys(student));      
+console.log(Object.values(student));     
+console.log(Object.entries(student));
+
+
+//Exercise 28 --> 
+const numbers = [1, 2, 3, 4, 5, 81, 69, 12, 11];
+numbers.forEach(numero => {
+    console.log(numero * 2);
+});
+
+const squaredNumbers = numbers.map(numero => numero * numero);
+console.log("Output of squerd numbers:", squaredNumbers);
+
+
+//Exercise 29 -->
+const students = [
+    {
+        name: "Kevin",
+        grade: 60
+    },
+    {
+        name: "Shala",
+        grade: 59
+    },
+    {
+        name: "Gesu",
+        grade: 61
+    }
+];
+
+let passedStudents = students.filter(student => student.grade >= 60);
+console.log(passedStudents);
+
+let passedStudendt = students.find(student => student.grade < 60);
+console.log(passedStudendt);
+
+
+//Exercise 30 -->
+const expenses = [45, 55, 66, 77, 88, 99, 12, 34];
+const sum = expenses.reduce((acc, current) => acc + current, 0 );
+console.log(sum);
+
+const words = ["banana", "apple", "cherry", "date"];
+words.sort();
+console.log(words)
