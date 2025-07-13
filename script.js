@@ -1,4 +1,4 @@
-/*
+
 // Exercise 1 -->
 let name = "Altin"
 const person = "Shala"
@@ -146,9 +146,9 @@ for (let i = 0; i < parole.length; i++) {
         console.log(parole[i]);
     }
 }
-*/
 
-//Exercise 17 -->
+
+//Exercises from 17 to 21 -->
 let persona = {
     name:"Gianni",
     age: 43,
@@ -159,3 +159,37 @@ persona.age = 60;
 console.log(persona.age);
 persona.job = "Developer";
 console.log(persona.job);
+
+
+const entries = Object.entries(persona);
+
+for (let property in persona) {
+    let value = persona[property];
+    console.log("property " + property + " = " + value);
+}
+
+
+//Exercise 22 & 23 -->
+function outerFunction(x, y) {
+    function innerFunction() {
+        return x + y;
+    }
+    console.log(innerFunction());
+} 
+outerFunction(1, 1)
+
+
+//Exercise 23 -->
+function outerFunction(x, initialValue) {
+    let result = initialValue;
+
+    function innerFunction(y) {
+        result += y;
+        return result;
+    }
+    return innerFunction;
+} 
+
+const myFunction = outerFunction(1, 2);
+console.log(myFunction(3));
+console.log(myFunction(3));
