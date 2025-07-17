@@ -95,22 +95,25 @@ if (score > 90 && score < 100) {
 
 
 //exericise 12 -->
-let punteggio =prompt("Total score is:")
 
-switch (punteggio.toUpperCase()) {
-    case score > 90 && score < 100 :
+
+let punteggio = prompt("Total score is:");
+let score = Number(punteggio);
+
+switch (true) {
+    case score > 90 && score < 100:
         console.log("Excellent score!");
         break;
-    case score >= 70 && score <= 89 :
+    case score >= 70 && score <= 89:
         console.log("Good score");
         break;
-    case score >= 60 && score <= 69 :
+    case score >= 60 && score <= 69:
         console.log("Sufficient score");
         break;
     case score <= 59:
         console.log("Insufficient score");
         break;
-    default :
+    default:
         console.log("Try again!");
 }
 
