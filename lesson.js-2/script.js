@@ -1,5 +1,4 @@
-//Exercise 1, 2, 3 -->
-
+// Exercise 1 ->
 class Automobile {
     constructor(marca, modello, anno) {
         this.marca = marca;
@@ -12,6 +11,7 @@ class Automobile {
     }
 }
 
+// Exercise 2 ->
 class Chilometraggio extends Automobile {
     constructor(marca, modello, anno, chilometri = 0) {
         super(marca, modello, anno);
@@ -38,6 +38,8 @@ console.log(auto.mostraChilomeraggio());
 auto.aggiungiChilometri(150);
 console.log(auto.mostraChilomeraggio());
 
+
+// Exercise 3 ->
 class Elettrica extends Automobile {
     constructor(marca, modello, anno, chilometri = 0, autonomia = 300) {
         super(marca, modello, anno);
@@ -61,6 +63,17 @@ class Elettrica extends Automobile {
 
 let carica = new Elettrica("Tesla", "Model Y", 2024, 10000, 400);carica.ricarica(20);
 console.log(carica.descrizione());
-console.log(carica.mostraAutonomia());
+console.log(carica.mostraAutonomia()); 
 carica.ricarica(10);
 console.log(carica.mostraAutonomia());
+
+
+// Exercise ->
+Automobile.prototype.saluta = function() {
+    return `ciao questa e la mia ${this.marca} ${this.modello} del ${this.anno}!`;
+    };
+let macchina = new Automobile("Mercedes", "CLA 200", 2024);
+console.log(macchina.saluta());
+
+
+// Exercise ->
