@@ -1,15 +1,24 @@
-// Exercise 1 ->
+// Exercise 1 & 5 ->
 class Automobile {
     constructor(marca, modello, anno) {
         this.marca = marca;
         this.modello = modello;
         this.anno = anno;
+
+        this.#calcolaEta(); // chiama il metodo privato
+    }
+
+    #calcolaEta() {
+        const mostraEta = new Date().getFullYear(); // CORRETTO
+        this.eta = mostraEta - this.anno;
     }
 
     descrizione() {
-        return `${this.marca} ${this.modello} (${this.anno})`;
+        return `${this.marca} ${this.modello} (${this.anno}) - Età: ${this.eta} anno`;
     }
 }
+
+
 
 // Exercise 2 ->
 class Chilometraggio extends Automobile {
@@ -61,19 +70,19 @@ class Elettrica extends Automobile {
 }
 
 
-let carica = new Elettrica("Tesla", "Model Y", 2024, 10000, 400);carica.ricarica(20);
+let carica = new Elettrica("Mercedes", "CLA 200", 2024);carica.ricarica(20);
 console.log(carica.descrizione());
 console.log(carica.mostraAutonomia()); 
 carica.ricarica(10);
 console.log(carica.mostraAutonomia());
 
 
-// Exercise ->
+// Exercise 4 ->
 Automobile.prototype.saluta = function() {
-    return `ciao questa e la mia ${this.marca} ${this.modello} del ${this.anno}!`;
+    return `Ciao questa e la mia ${this.marca} ${this.modello} del ${this.anno}!`;
     };
 let macchina = new Automobile("Mercedes", "CLA 200", 2024);
 console.log(macchina.saluta());
 
 
-// Exercise ->
+// Exercise  ->
