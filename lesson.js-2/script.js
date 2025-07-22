@@ -1,5 +1,6 @@
-// Exercise 1 - 2 & 5 -  ->
 class Automobile {
+    #contatoreChiamate;
+
     constructor(marca, modello, anno, chilometri = 0) {
         this.marca = marca;
         this.modello = modello;
@@ -7,6 +8,7 @@ class Automobile {
         this.chilometri = chilometri;
 
         this.#calcolaEta(); 
+        this.#contatoreChiamate = 0;
     }
 
     #calcolaEta() {
@@ -21,10 +23,12 @@ class Automobile {
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometri += km;
+            this.#contatoreChiamate++;  
         } else {
             console.log("Not valid for KM.");
         }
     }
+
     mostraChilomeraggio() {
         return `${this.chilometri} km`;
     }
@@ -33,9 +37,9 @@ class Automobile {
         if (this.chilometri > 100000) {
             return "Attenzione: Hai superato i km.";
         }
-         return "Chilometraggio sotto controllo.";
+        return "Chilometraggio sotto controllo.";
     }
-// Exercise 6 ->
+
     static ConfrontaChilometraggio(auto1, auto2) {
         if (auto1.chilometri > auto2.chilometri) {
             return `${auto1.marca} ${auto1.modello} ha più chilometri di ${auto2.marca} ${auto2.modello}`;
@@ -45,7 +49,20 @@ class Automobile {
             return `Entrambe le auto hanno lo stesso chilometraggio`;
         }
     }
+
+    getNumeroChiamate() {
+        return this.#contatoreChiamate;
+    }
 }
+
+// ✅ Codice di test
+let macc = new Automobile("Mercedes", "CLA 200", 2024);
+macc.aggiungiChilometri(143341);
+macc.aggiungiChilometri(22);
+macc.aggiungiChilometri(36473);
+macc.aggiungiChilometri(4547454);
+console.log(macc.getNumeroChiamate());  
+
 let auto1 = new Automobile("Mercedes", "CLA 200", 2024, 100000);
 let auto2 = new Automobile("BMW", "Serie 1", 2021, 1000);
 
