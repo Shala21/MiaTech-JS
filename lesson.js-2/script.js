@@ -1,31 +1,23 @@
-// Exercise 1 & 5 ->
+// Exercise 1 - 2 & 5 -  ->
 class Automobile {
-    constructor(marca, modello, anno) {
+    constructor(marca, modello, anno, chilometri = 0) {
         this.marca = marca;
         this.modello = modello;
         this.anno = anno;
+        this.chilometri = chilometri;
 
-        this.#calcolaEta(); // chiama il metodo privato
+        this.#calcolaEta(); 
     }
 
     #calcolaEta() {
-        const mostraEta = new Date().getFullYear(); // CORRETTO
+        const mostraEta = new Date().getFullYear();
         this.eta = mostraEta - this.anno;
     }
 
     descrizione() {
-        return `${this.marca} ${this.modello} (${this.anno}) - Età: ${this.eta} anno`;
+        return `${this.marca} ${this.modello} (${this.anno}) - Età: ${this.eta} ${this.eta === 1 ? "anno" : "anni"}`;
     }
-}
 
-
-
-// Exercise 2 ->
-class Chilometraggio extends Automobile {
-    constructor(marca, modello, anno, chilometri = 0) {
-        super(marca, modello, anno);
-        this.chilometri = chilometri;
-    }
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometri += km;
@@ -36,23 +28,32 @@ class Chilometraggio extends Automobile {
     mostraChilomeraggio() {
         return `${this.chilometri} km`;
     }
-} 
 
+    _controllaChilometri() {
+        if (this.chilometri > 100000) {
+            return "Attenzione: Hai superato i km.";
+        }
+         return "Chilometraggio sotto controllo.";
+    }
+// Exercise 6 ->
+    static ConfrontaChilometraggio(auto1, auto2) {
+        if (auto1.chilometri > auto2.chilometri) {
+            return `${auto1.marca} ${auto1.modello} ha più chilometri di ${auto2.marca} ${auto2.modello}`;
+        } else if (auto1.chilometri < auto2.chilometri) {
+            return `${auto2.marca} ${auto2.modello} ha più chilometri di ${auto1.marca} ${auto1.modello}`;
+        } else {
+            return `Entrambe le auto hanno lo stesso chilometraggio`;
+        }
+    }
+}
+let auto1 = new Automobile("Mercedes", "CLA 200", 2024, 100000);
+let auto2 = new Automobile("BMW", "Serie 1", 2021, 1000);
 
-let auto = new Chilometraggio("Mercedes", "CLA 200", 2024);
-
-console.log(auto.descrizione());
-console.log(auto.mostraChilomeraggio());
-
-auto.aggiungiChilometri(150);
-console.log(auto.mostraChilomeraggio());
-
-
+console.log(Automobile.ConfrontaChilometraggio(auto1, auto2))
 // Exercise 3 ->
 class Elettrica extends Automobile {
     constructor(marca, modello, anno, chilometri = 0, autonomia = 300) {
-        super(marca, modello, anno);
-        this.chilometri = chilometri;
+        super(marca, modello, anno, chilometri);
         this.autonomia = autonomia;
     }
 
@@ -67,14 +68,20 @@ class Elettrica extends Automobile {
     mostraAutonomia() {
         return `${this.autonomia} km di autonomia`;
     }
+
+    mostraAvvisochilometri() {
+        return `Avviso ${this._controllaChilometri()}`;
+    }
 }
 
 
-let carica = new Elettrica("Mercedes", "CLA 200", 2024);carica.ricarica(20);
+let carica = new Elettrica("Mercedes", "CLA 200", 2020, 120000);
+carica.ricarica(20);
 console.log(carica.descrizione());
 console.log(carica.mostraAutonomia()); 
 carica.ricarica(10);
 console.log(carica.mostraAutonomia());
+console.log(carica.mostraAvvisochilometri());  
 
 
 // Exercise 4 ->
@@ -83,6 +90,3 @@ Automobile.prototype.saluta = function() {
     };
 let macchina = new Automobile("Mercedes", "CLA 200", 2024);
 console.log(macchina.saluta());
-
-
-// Exercise  ->
