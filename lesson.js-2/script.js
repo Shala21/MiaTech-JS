@@ -55,7 +55,7 @@ class Automobile {
     }
 }
 
-// ✅ Codice di test
+
 let macc = new Automobile("Mercedes", "CLA 200", 2024);
 macc.aggiungiChilometri(143341);
 macc.aggiungiChilometri(22);
