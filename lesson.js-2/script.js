@@ -31,7 +31,6 @@ class Automobile {
         if (km > 0) {
             this.chilometri += km;
             this.#incrementaContatore();  
-            // console.log(`Aggiunti ${km} km. Chilometri totali: ${this.chilometri}`)
         } else {
             console.log("Not valid for KM."); 
         }
@@ -62,6 +61,10 @@ class Automobile {
     getNumeroChiamate() {
         return this.#contatoreChiamate;
     }
+    // metodo pubblico per mostrare il contatore
+    mostraContatoreChiamate() {
+        return this.#contatoreChiamate;
+    }
 }
 
 // Test
@@ -70,7 +73,9 @@ macc.aggiungiChilometri(143341);
 macc.aggiungiChilometri(22);
 macc.aggiungiChilometri(36473);
 macc.aggiungiChilometri(4547454);
-console.log(macc.getNumeroChiamate());  // Output: 4
+console.log(macc.getNumeroChiamate());  // Output 4
+console.log(macc.mostraContatoreChiamate());  // Deve anche mostrare 4
+
 
 let auto1 = new Automobile("Mercedes", "CLA 200", 2024, 100000);
 let auto2 = new Automobile("BMW", "Serie 1", 2021, 1000);
