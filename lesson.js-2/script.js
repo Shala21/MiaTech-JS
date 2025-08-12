@@ -1,5 +1,4 @@
 class Automobile {
-    // Exercise 1 - 2 & 5 -  ->
     #contatoreChiamate;
 
     constructor(marca, modello, anno, chilometri = 0) {
@@ -13,11 +12,10 @@ class Automobile {
     }
 
     #calcolaEta() {
-        const mostraEta = new Date().getFullYear();
-        this.eta = mostraEta - this.anno;
+        const annoCorrente = new Date().getFullYear();
+        this.eta = annoCorrente - this.anno;
     }
 
-    // Metodo privato per incrementare il contatore
     #incrementaContatore() {
         this.#contatoreChiamate++;
     }
@@ -26,17 +24,16 @@ class Automobile {
         return `${this.marca} ${this.modello} (${this.anno}) - Età: ${this.eta} ${this.eta === 1 ? "anno" : "anni"}`;
     }
 
-    // il metodo privato qui dentro
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometri += km;
-            this.#incrementaContatore();  
+            this.#incrementaContatore();
         } else {
-            console.log("Not valid for KM."); 
+            console.log("Not valid for KM.");
         }
     }
 
-    mostraChilomeraggio() {
+    mostraChilometraggio() {
         return `${this.chilometri} km`;
     }
 
@@ -47,7 +44,25 @@ class Automobile {
         return "Chilometraggio sotto controllo.";
     }
 
-    // Exercise 6 ->
+    getContatoreChiamate() {
+        return this.#contatoreChiamate;
+    }
+
+    // Getter per chilometraggio
+    get chilometraggio() {
+        return this.chilometri;
+    }
+
+    // Setter per chilometraggio
+    set chilometraggio(nuovoValore) {
+        if (nuovoValore >= this.chilometri) {
+            this.chilometri = nuovoValore;
+        } else {
+            console.log("Errore: Non puoi diminuire il chilometraggio.");
+        }
+    }
+
+    // Exercise 6 methods moved inside the class
     static ConfrontaChilometraggio(auto1, auto2) {
         if (auto1.chilometri > auto2.chilometri) {
             return `${auto1.marca} ${auto1.modello} ha più chilometri di ${auto2.marca} ${auto2.modello}`;
@@ -66,6 +81,51 @@ class Automobile {
         return this.#contatoreChiamate;
     }
 }
+
+// Classe Camion che estende Automobile
+class Camion extends Automobile {
+    constructor(marca, modello, anno, chilometri = 0, caricoMassimoKg) {
+        super(marca, modello, anno, chilometri);
+        this.caricoMassimo = caricoMassimoKg;   // in kg
+        this.caricoAttuale = 0;                 // inizialmente vuoto
+    }
+
+    //  Sovrascrive descrizione per includere carico massimo
+    descrizione() {
+        return `${super.descrizione()} - Carico massimo: ${this.caricoMassimo} kg - Carico attuale: ${this.caricoAttuale} kg`;
+    }
+
+    //  Metodo per caricare merce (rispetta il limite)
+    carica(kg) {
+        if (kg <= 0) {
+            console.log("Errore: il carico deve essere positivo.");
+            return;
+        }
+
+        if (this.caricoAttuale + kg <= this.caricoMassimo) {
+            this.caricoAttuale += kg;
+            console.log(`Caricati ${kg} kg. Carico attuale: ${this.caricoAttuale} kg`);
+        } else {
+            console.log("Errore: supereresti il carico massimo!");
+        }
+    }
+}
+
+const camion1 = new Camion("Volvo", "FH16", 2020, 120000, 25000);
+
+console.log(camion1.descrizione());
+// Volvo FH16 (2020) - Età: 5 anni - Carico massimo: 25000 kg - Carico attuale: 0 kg
+
+camion1.carica(10000);
+// Caricati 10000 kg. Carico attuale: 10000 kg
+
+camion1.carica(17000);
+// Errore: supereresti il carico massimo!
+
+console.log(camion1.descrizione());
+// mostra il carico aggiornato
+
+
 
 // Test
 let macc = new Automobile("Mercedes", "CLA 200", 2024);
@@ -105,7 +165,7 @@ class Elettrica extends Automobile {
         return `Avviso ${this._controllaChilometri()}`;
     }
 }
-
+    
 let carica = new Elettrica("Mercedes", "CLA 200", 2020, 120000);
 carica.ricarica(20);
 console.log(carica.descrizione());
