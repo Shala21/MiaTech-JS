@@ -117,6 +117,8 @@ class Camion extends Automobile {
     }
 }
 
+
+//carico massimo
 const camion1 = new Camion("Volvo", "FH16", 2020, 120000, 25000);
 
 console.log(camion1.descrizione());
@@ -131,6 +133,18 @@ camion1.carica(17000);
 console.log(camion1.descrizione());
 // mostra il carico aggiornato
 
+
+// Crea istanza per automobile e camion + verifica istanza in Automobile
+const auto3 = new Automobile("Fiat", "Panda", 2000, 1000000);
+const camion2 = new Camion("Iveco", "S-Way", 2025, 0);
+
+console.log(auto3 instanceof Automobile);
+console.log(camion2 instanceof Camion);
+
+function verifivaIstanza(obj, classe) {
+    return obj instanceof classe;
+}
+console.log(verifivaIstanza(auto3, Automobile));
 
 
 // Test
