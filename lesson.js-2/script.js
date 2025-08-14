@@ -11,6 +11,12 @@ class Automobile {
         this.#calcolaEta();
         this.#contatoreChiamate = 0;
     }
+    // Aggiungi getters 
+    get chilometraggio() {
+        return `${this.chilometraggio}`;
+    }
+    // Aggiungi setters
+    
 
     #calcolaEta() {
         const mostraEta = new Date().getFullYear();
@@ -110,7 +116,7 @@ let carica = new Elettrica("Mercedes", "CLA 200", 2020, 120000);
 carica.ricarica(20);
 console.log(carica.descrizione());
 console.log(carica.mostraAutonomia());
-carica.ricarica(10);
+carica.ricarica(11);
 console.log(carica.mostraAutonomia());
 console.log(carica.mostraAvvisochilometri());
 
