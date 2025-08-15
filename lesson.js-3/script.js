@@ -58,3 +58,19 @@ const arry1 = [1, 2, 3];
 const arry2 = [4, 5, 6];
 
 console.log(...arry1, ...arry2);
+
+
+// Copia di un oggetto con propieta aggiuntive
+const oggettoBase = {
+    nome : "Altin",
+    city : "Brig",
+    via : "Bachstr."
+}; 
+
+const aggiuntaOggetto = {
+    ...oggettoBase,
+    nome : "Altin Shala",
+    civico : 21
+}; 
+
+console.log(aggiuntaOggetto);
