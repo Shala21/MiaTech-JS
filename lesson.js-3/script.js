@@ -34,3 +34,21 @@ console.log(nome, cognome);
 const {nome : firstName, cognome : surname} = Persona
 
 console.log(firstName, surname);
+
+
+// Destructuring con valori predefiniti di oggetti
+const {
+    nome: nome1 = "DefaultNome",
+    cognome: cognome2 = "DefaultCognome",
+    eta: eta3 = 0
+} = Persona;
+
+console.log(nome1, cognome2, eta3);
+
+
+// Arry di numeri utilizzando lo spread operator
+const arry1 = [1, 2, 3];
+const arry2 = [4, 5, 6];
+
+console.log(...arry1, ...arry2);
+
