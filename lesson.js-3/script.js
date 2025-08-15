@@ -4,11 +4,11 @@ const numeri = [1, 2, 3, 4, 5];
 const [a, b, c] = numeri;
 console.log(a, b);
 
-// saltare elementi durante il destructing
+// saltare elementi durante il destructuring
 console.log(a, c);
 
 
-// Destructing con valori predefiniti
+// Destructuring con valori predefiniti
 const fruits = ["banana", "mela", "kiwi"];
 const [
   fruit1 = "default1",
@@ -29,3 +29,8 @@ const Persona = {
 }
 const {nome, cognome} = Persona;
 console.log(nome, cognome);
+
+// Destructuring con nomi di variabili diversi
+const {nome : firstName, cognome : surname} = Persona
+
+console.log(firstName, surname);
