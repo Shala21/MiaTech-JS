@@ -46,9 +46,15 @@ const {
 console.log(nome1, cognome2, eta3);
 
 
-// Arry di numeri utilizzando lo spread operator
+// Copia di una arry
+const arryOriginal = [1, 2, 3];
+const arryCopie = [...arryOriginal];
+
+console.log(...arryCopie);
+
+
+// Unione di due arry
 const arry1 = [1, 2, 3];
 const arry2 = [4, 5, 6];
 
 console.log(...arry1, ...arry2);
-
