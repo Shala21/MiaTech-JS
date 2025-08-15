@@ -7,6 +7,7 @@ console.log(a, b);
 // saltare elementi durante il destructing
 console.log(a, c);
 
+
 // Destructing con valori predefiniti
 const fruits = ["banana", "mela", "kiwi"];
 const [
@@ -18,3 +19,13 @@ const [
 ] = fruits;
 
 console.log(fruit1, fruit2, fruit3, fruit4, fruit5);
+
+
+//Estrazione di propieta base
+const Persona = {
+    nome : "Altin",
+    cognome : "Shala",
+    eta : 31
+}
+const {nome, cognome} = Persona;
+console.log(nome, cognome);
