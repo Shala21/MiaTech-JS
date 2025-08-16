@@ -115,3 +115,10 @@ const xsona = { nome : "Altin", cognome : "Shala"};
 const jsonString = JSON.stringify(xsona);
 
 console.log(jsonString);
+
+
+// Conversione di una stringa JSON in un oggetto
+const obj = JSON.parse(jsonString);
+
+console.log(obj.nome);
+console.log(obj.cognome);
