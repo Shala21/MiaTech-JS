@@ -89,4 +89,8 @@ console.log(somma(1, 2, 3));
 console.log(somma(10, 20, 30, 40, 50));
 
 
-// DEstructurin  arry con reste operator
+// Destructurin arry con rest operator
+const [primo, secondo, ...altri] = [1, 2, 10, 20, 30];
+console.log(primo);
+console.log(secondo);
+console.log(...altri);
