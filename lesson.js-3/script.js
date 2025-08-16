@@ -108,3 +108,10 @@ const PeronaMe = {
 
 const {nome: nomeME, cognome: cognomeME, ...altro} = PeronaMe;
 console.log(nomeME, cognomeME, altro);
+
+
+// Conversion di un oggetto in una stringa JSON
+const xsona = { nome : "Altin", cognome : "Shala"};
+const jsonString = JSON.stringify(xsona);
+
+console.log(jsonString);
