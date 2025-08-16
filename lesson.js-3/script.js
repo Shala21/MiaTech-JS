@@ -91,6 +91,20 @@ console.log(somma(10, 20, 30, 40, 50));
 
 // Destructurin arry con rest operator
 const [primo, secondo, ...altri] = [1, 2, 10, 20, 30];
+
 console.log(primo);
 console.log(secondo);
 console.log(...altri);
+
+
+// Destructuring oggetto con reste 
+const PeronaMe = {
+    nome : "Altin ",
+    cognome : "Shala",
+    eta : 30,
+    citta : "Roma",
+    via : "Bachstr. 21"
+}
+
+const {nome: nomeME, cognome: cognomeME, ...altro} = PeronaMe;
+console.log(nomeME, cognomeME, altro);
