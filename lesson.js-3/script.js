@@ -74,3 +74,19 @@ const aggiuntaOggetto = {
 }; 
 
 console.log(aggiuntaOggetto);
+
+
+// Funzioni con parametri variabili
+function somma(...numeri) {
+  let risultato = 0;
+  for (const numero of numeri) {
+    risultato += numero;
+  }
+  return risultato;
+}
+
+console.log(somma(1, 2, 3)); 
+console.log(somma(10, 20, 30, 40, 50));
+
+
+// DEstructurin  arry con reste operator
