@@ -122,3 +122,15 @@ const obj = JSON.parse(jsonString);
 
 console.log(obj.nome);
 console.log(obj.cognome);
+
+
+// Manipolaziona di dati JSON
+const jsonString1 = '[{"name": "Toni"}, {"name": "Bob"}, {"name": "Rob"}]';
+
+const jsonArry = JSON.parse(jsonString1);
+
+jsonArry.push({"name" : "Altin"});
+
+const modificaJson = JSON.stringify(jsonArry);
+
+console.log(modificaJson);
