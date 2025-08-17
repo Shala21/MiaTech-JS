@@ -161,16 +161,6 @@ console.log(messaggio1);
 
 
 // Funzione e template literals 
-// non so quale delle dei due ex. sia giusto 
-// ex. 1
-function greeting(nome, eta) {
-    return `Ciao sono ${nome} e ho ${eta} anni.`;
-}
-
-console.log(greeting("Altin", 30));
-
-//------------------------------------
-// ex. 2
 function intro(person) {
     return `Ciao mi chiamo ${person.nome} e ho ${person.eta} anni.`;
 }
@@ -181,3 +171,14 @@ const personEX = {
 };
 
 console.log(intro(personEX));
+
+
+// Utilizzare console.log
+const diverse = [
+    {nome : "Altin", eta : 30},
+    [
+        {numero : 39393939, tel : "Cellulare"}
+    ]
+];
+
+console.log(diverse);
