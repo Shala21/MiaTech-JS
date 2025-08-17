@@ -192,3 +192,19 @@ let numeros = "abc";
 if (isNaN(numeros)) {
     console.error("Attenzione! Si possono usare solo numeri!");
 };
+
+
+// Utilizzare console.table e console.group
+const people = [
+    {nome : "Altin", eta : 30, citta : "Brig"},
+    {nome : "Gianni", eta : 31, citta : "Roma"},
+    {nome : "Toni", eta : 32, citta : "Milano"}
+];
+
+console.table(people);
+
+console.group("Dettagli gruppo:");
+console.log("Altin ha 30 anni e vive a Brig");
+console.log("Gianni ha 31 anni e vive a Roma");
+console.log("Tonin ha 32 anni e vive a Milano");
+console.groupEnd();
