@@ -176,9 +176,19 @@ console.log(intro(personEX));
 // Utilizzare console.log
 const diverse = [
     {nome : "Altin", eta : 30},
-    [
-        {numero : 39393939, tel : "Cellulare"}
-    ]
+    {numero : 39393939, tel : "Cellulare"}
 ];
 
 console.log(diverse);
+
+
+// Utilizzare console.error e console.warn
+let eta = -2;
+if (eta < 0) {
+    console.warn("Eta non puo essere meno di zero!");
+}
+
+let numeros = "abc";
+if (isNaN(numeros)) {
+    console.error("Attenzione! Si possono usare solo numeri!");
+};
