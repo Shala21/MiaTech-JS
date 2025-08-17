@@ -134,3 +134,11 @@ jsonArry.push({"name" : "Altin"});
 const modificaJson = JSON.stringify(jsonArry);
 
 console.log(modificaJson);
+
+
+// Stringa semplice con template literals
+const nome2 = "Altin";
+const congnome2 = "Shala";
+
+const messaggio = `Ciao, sono ${nome2} ${congnome2}. Piavere di conoscerti!`;
+console.log(messaggio);
