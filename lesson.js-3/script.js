@@ -218,3 +218,15 @@ setTimeout(() => {
 
 
 // Utilizzare setInterval
+let contatore = 0;
+
+const intervallo = setInterval(() => {
+    contatore++;
+    console.log(`Messaggio numero ${contatore} ogni 2 secondi`);
+
+    // Fermare l'intervallo dopo 5 ripetizioni
+    if (contatore === 5) {
+        clearInterval(intervallo);
+        console.log("Intervallo fermato!");
+    }
+}, 2000);
