@@ -142,3 +142,19 @@ const congnome2 = "Shala";
 
 const messaggio = `Ciao, sono ${nome2} ${congnome2}. Piavere di conoscerti!`;
 console.log(messaggio);
+
+
+// Stringa multilinea con template literals
+const nome3 = "Altin";
+const cognome3 = "Shala";
+eta1 = 30;
+citta = "Brig";
+
+const messaggio1 = `
+Nome : ${nome3}
+Cognome : ${cognome3}
+Età : ${eta1}
+Città : ${citta}
+`;
+
+console.log(messaggio1);
