@@ -206,5 +206,15 @@ console.table(people);
 console.group("Dettagli gruppo:");
 console.log("Altin ha 30 anni e vive a Brig");
 console.log("Gianni ha 31 anni e vive a Roma");
-console.log("Tonin ha 32 anni e vive a Milano");
+console.log("Toni ha 32 anni e vive a Milano");
 console.groupEnd();
+
+
+// Utilizzare setTimeout
+setTimeout(() => {
+    console.log("Il messaggio appare dopo 3 secondi!");
+    }, 2000
+);
+
+
+// Utilizzare setInterval
