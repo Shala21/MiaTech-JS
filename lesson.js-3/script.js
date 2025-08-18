@@ -218,15 +218,31 @@ setTimeout(() => {
 
 
 // Utilizzare setInterval
-let contatore = 0;
+let intervallo = setInterval(messaggio, 2000);
 
-const intervallo = setInterval(() => {
-    contatore++;
-    console.log(`Messaggio numero ${contatore} ogni 2 secondi`);
 
-    // Fermare l'intervallo dopo 5 ripetizioni
-    if (contatore === 5) {
-        clearInterval(intervallo);
-        console.log("Intervallo fermato!");
-    }
-}, 2000);
+// Interrompere setInterval con clearIntervallar
+setTimeout(function() {
+    clearInterval(intervallo);
+    console.log("Intervallo interrotto dopo 5 secondi");
+  }, 5000);
+
+
+// Gestione di un errore semplice 
+try {
+  let numero1 = 10;
+  let numero2 = 0; 
+
+  if (numero2 === 0) {
+    throw new Error("Non puoi dividere per zero!");
+  }
+
+  let risultato = numero1 / numero2;
+  console.log("Il risultato è:", risultato);
+
+} catch (errore) {
+  console.error("Si è verificato un errore:", errore.message);
+}
+
+
+//
