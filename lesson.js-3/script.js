@@ -245,4 +245,24 @@ try {
 }
 
 
+// Gestione di piu tipi di errori
+try {
+  let testo = 123; // <-- non e un testo
+
+  let risultato = testo.toUpperCase(); 
+  console.log("Risultato:", risultato);
+
+  if (risultato.length === 0) {
+    throw new Error("La stringa è vuota!");
+  }
+
+} catch (errore) {
+  if (errore instanceof TypeError) {
+    console.error("Errore di tipo: il valore non è una stringa.");
+  } else {
+    console.error("Errore generico:", errore.message);
+  }
+}
+
+
 //
