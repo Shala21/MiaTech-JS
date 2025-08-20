@@ -247,7 +247,7 @@ try {
 
 // Gestione di piu tipi di errori
 try {
-  let testo = 123; // <-- non e un testo
+  let testo = 1234 ; // <-- non e un testo
 
   let risultato = testo.toUpperCase(); 
   console.log("Risultato:", risultato);
@@ -265,4 +265,21 @@ try {
 }
 
 
-//
+// Uso do finally per usare il codice indipendentemente dal risultato
+function dividi(a, b) {
+    try {
+        console.log("inizion divisione");
+        if (b === 0) {
+            throw new Error("Divisione per zero non consentita!");
+        }
+        let risultato1 = a / b;
+        console.log("risultato:", risultato1);
+    } catch(errore) {
+        console.error("Si è verificato un errore:", errore.messaggio);
+    } finally {
+        console.log("Blocco finally: questa parte viene eseguita!")
+    }
+}
+
+dividi(10, 2);
+dividi(10, 0);
