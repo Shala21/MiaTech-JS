@@ -5,6 +5,7 @@ const [a, b, c] = numeri;
 console.log(a, b);
 
 // saltare elementi durante il destructuring
+const [a, , c] = numeri;
 console.log(a, c);
 
 
